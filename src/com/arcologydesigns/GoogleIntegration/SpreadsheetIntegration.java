@@ -1,6 +1,10 @@
 package com.arcologydesigns.GoogleIntegration;
 
 import com.arcologydesigns.DataStructures.BST;
+import com.arcologydesigns.DataStructures.Queue;
+import com.arcologydesigns.ept.schoolItems.Assignment;
+import com.arcologydesigns.ept.schoolItems.Classes;
+import com.arcologydesigns.ept.users.Instructor;
 import com.arcologydesigns.ept.users.Student;
 
 import java.io.BufferedReader;
@@ -114,6 +118,22 @@ public class SpreadsheetIntegration {
       //System.out.print(in.readLine() + "\n"); // skip headers
       in.readLine();
 
+      ArrayList<Classes> classesList = new ArrayList<>();
+
+      while(in.ready()) {
+         inputLine = in.readLine();
+         final String split[] = inputLine.split(",");
+         Classes myClasses = new Classes();
+
+         if (split.length > 1) {
+            myClasses.setClassId(split[0]);
+            myClasses.setInstructorId(split[1]);
+            myClasses.setStudentId(split[2]);
+            myClasses.setClassName(split[3]);
+         }
+
+         classesList.add(myClasses);
+      }
 
    }
 
@@ -123,7 +143,23 @@ public class SpreadsheetIntegration {
       //TODO: replace the below test with implementation; Instructor data to use ArrayList
       //System.out.print(in.readLine() + "\n"); // skip headers
       in.readLine();
+      ArrayList<Instructor> instructorsList = new ArrayList<>();
 
+      while(in.ready()) {
+         inputLine = in.readLine();
+         final String split[] = inputLine.split(",");
+         Instructor instructor = new Instructor();
+
+         if (split.length > 1) {
+            instructor.setUserID(split[0]);
+            instructor.setUserName(split[1]);
+            instructor.setPhone(split[2]);
+            instructor.setAddress(split[3]);
+            instructor.setEmail(split[4]);
+         }
+
+         instructorsList.add(instructor);
+      }
 
    }
 
@@ -161,7 +197,19 @@ public class SpreadsheetIntegration {
       //TODO: replace the below test with implementation; class data to use Queue
       //System.out.print(in.readLine() + "\n"); // skip headers
       in.readLine();
+      Queue<Assignment> assignmentQueue = new Queue<>();
 
+      while (in.ready()) {
+         inputLine = in.readLine();
+         final String split[] = inputLine.split(",");
+         Assignment assignment = new Assignment();
+
+         if (split.length > 1) {
+
+         }
+
+         assignmentQueue.enQueue(assignment);
+      }
 
    }
 }  //end class SpreadsheetIntegration
