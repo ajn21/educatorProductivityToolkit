@@ -120,6 +120,15 @@ public class BSTTest {
 
    @Test
    public void testBreadthFirstSearch() throws Exception {
+       BST<Integer> testTree = new BST<>();
+       testTree.insertItem(-1);
+       testTree.insertItem(3);
+       testTree.insertItem(5);
+       testTree.insertItem(6);
+       testTree.insertItem(4);
+       testTree.insertItem(2);
+       assert(testTree.breadthFirstSearch(0)== null);
+       assert(testTree.breadthFirstSearch(6)== 6.0);
 
    }
 
@@ -137,7 +146,7 @@ public class BSTTest {
        testTree.insertItem(6);
        testTree.insertItem(4);
        testTree.insertItem(2);
-       assertEquals(Double.valueOf(-1.0), testTree.getMinTreeValue());
+       assertEquals(Integer.valueOf(-1), testTree.getMinTreeValue());
 
    }
 
@@ -150,7 +159,7 @@ public class BSTTest {
        testTree.insertItem(6);
        testTree.insertItem(4);
        testTree.insertItem(2);
-       assertEquals(Double.valueOf(6.0), testTree.getMaxTreeValue());
-
+       assertEquals(Integer.valueOf(6), testTree.getMaxTreeValue());
+        //these are not working.
    }
 }
