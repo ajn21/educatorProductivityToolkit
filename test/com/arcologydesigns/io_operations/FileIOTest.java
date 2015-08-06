@@ -69,4 +69,9 @@ public class FileIOTest {
             setContentPane(new JLabel(new ImageIcon(".\\resources\\desert.jpg")));
       */
    }
+
+   @Test
+   public void testReadAll() throws Exception {
+
+   }
 }

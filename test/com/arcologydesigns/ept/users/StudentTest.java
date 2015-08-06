@@ -47,7 +47,7 @@ public class StudentTest {
 
       Student Foo = new Student ( "Jacob" , 94);
       String Bar = Foo.toString();
-      assertEquals ("Jacob: 94.0", Bar);
+      assertEquals("Jacob: 94.0", Bar);
 
 
    }
@@ -60,4 +60,14 @@ public class StudentTest {
       System.out.println(test);//works fine but i'm seeing an '0' character here.
 
    }
+
+   @Test
+   public void testEquals() throws Exception {
+
+   }
+
+
+
+
+
 }
