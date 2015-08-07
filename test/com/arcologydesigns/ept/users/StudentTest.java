@@ -1,5 +1,6 @@
 package com.arcologydesigns.ept.users;
 
+import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import com.sun.prism.shader.Solid_ImagePattern_Loader;
 import org.junit.After;
 import org.junit.Before;
@@ -26,44 +27,65 @@ public class StudentTest {
 
    @Test
    public void testCompareTo() throws Exception {
-      Student Foo = new Student("Bob", 0);
-      Student Bar = new Student("", 0);
+      Student foo = new Student("Bob", 0);
+      foo.setUserID("ID");
+      foo.setUserName("foo");
+      foo.setPhone("Phone");
+      foo.setAddress("Address");
+      foo.setEmail("Email");
 
-      int test = Foo.compareTo(Bar);
-      System.out.printf("%s", test);
-      assert (test == 0);
+      Student bar = new Student("", 0);
+      bar.setUserID("ID");
+      bar.setUserName("Bar");
+      bar.setPhone("Phone");
+      bar.setAddress("Address");
+      bar.setEmail("Email");
+      System.out.println("Bar is:"+ bar);
 
-      Student A = new Student ( "", 1);
-      Student B = new Student ( "", 0);
-      test = A.compareTo(B);
-      assert (test == 1);
+      int test = foo.compareTo(bar);
+      assert (test != 1);
 
-      test = B.compareTo(A);
-      assert ( test == -1);
+
+
    }
 
    @Test
    public void testToString() throws Exception {
 
-      Student Foo = new Student ( "Jacob" , 94);
-      String Bar = Foo.toString();
-      assertEquals("Jacob: 94.0", Bar);
+      Student foo = new Student ( "Jacob" , 94);
+      foo.setUserID("Password");
+      foo.setUserName("John");
+      foo.setPhone("Phone");
+      foo.setAddress("Address");
+      foo.setEmail("Email");
+      String Bar = foo.toString();
+      assertEquals("Password,John,Phone,Address,Email;", Bar);
 
 
    }
 
    @Test
    public void testFullStringRep() throws Exception {
-      Student J = new Student("John", 85);
-      String test = J.fullStringRep();
-      assertEquals("John: 85.0", J.fullStringRep());
-      System.out.println(test);//works fine but i'm seeing an '0' character here.
+      Student foo = new Student("John", 85);
+
+
+      assertEquals("John: 85.0", foo.fullStringRep());
 
    }
 
    @Test
    public void testEquals() throws Exception {
+      Student foo = new Student("Bob", 0);
+      foo.setUserID("ID");
+      foo.setUserName("foo");
+      foo.setPhone("Phone");
+      foo.setAddress("Address");
+      foo.setEmail("Email");
 
+      Student foo2= foo;
+
+      boolean test = foo.equals(foo2);
+      assertEquals (foo, foo2);
    }
 
 
